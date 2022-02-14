@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample</title>
+  <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js'></script>
+</head>
+
+<body>
+  <center>
+    <h1>Symbol ({{ symbol }}) Line Chart: Date vs. Price</h1>
+    <canvas id="linechart" width="900" height="400"></canvas>
+    <script>
+      var chartCtx = document.getElementById("linechart").getContext("2d");
+      var LineChart = new Chart(chartCtx, {
+        type: "line",
+        data: {
+          labels: {{ labels | safe }},
+          datasets: [
+            {
+              label: "Open Price",
+              data: {{ openprice | safe }},
+              fill: false,
+              borderColor: "rgb(76,192,192)",
+              lineTension: 0.1
+            },
+            {
+              label: "Close Price",
+              data: {{ closeprice | safe }},
+              fill: false,
+              borderColor: "rgb(192,57,39)",
+              lineTension: 0.1
+            },
+            {
+              label: "High Price",
+              data: {{ highprice | safe }},
+              fill: false,
+              borderColor: "rgb(33,66,99)",
+              lineTension: 0.1
+            },
+            {
+              label: "Low Price",
+              data: {{ lowprice | safe }},
+              fill: false,
+              borderColor: "rgb(87,55,88)",
+              lineTension: 0.1
+            }
+          ]
+      },
+      options: {
+        responsive: true
+      }
+    });
+    </script>
+  </center>
+</body>
+</html>
