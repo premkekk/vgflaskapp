@@ -1,0 +1,24 @@
+<!-- jinja2 templates -->
+<!-- output details in tabular format -->
+<table border =1>
+    <th>
+    <tr>
+        <td>SYMBOL</td>
+        <td>DATE</td>
+        <td>OPEN PRICE</td>
+        <td>CLOSE PRICE</td>
+        <td>HIGH PRICE</td>
+        <td>LOW PRICE</td>
+    </tr>
+    </th>
+    {% for symdata in symdataDetails %}
+    <tr>
+        <td> {{symdata[0]}}</td>
+        <td> {{symdata[1]}}</td>
+        <td> {{symdata[2]}}</td>
+        <td> {{symdata[3]}}</td>
+        <td> {{symdata[4]}}</td>
+        <td> {{symdata[5]}}</td>
+    </tr>
+    {% endfor %}
+</table>

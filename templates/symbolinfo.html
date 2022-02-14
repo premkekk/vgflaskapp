@@ -1,7 +1,6 @@
 <!-- jinja2 templates -->
 <!-- output details in tabular format -->
 <table border =1>
-    {% for symdata in symdataDetails %}
     <th>
         <td>SYMBOL</td>
         <td>SECTOR</td>
@@ -9,6 +8,7 @@
         <td>MARKETCAP</td>
         <td>QUOTETYPE</td>
     </th>
+    {% for symdata in symdataDetails %}
     <tr>
         <td> {{symdata[0]}}</td>
         <td> {{symdata[1]}}</td>

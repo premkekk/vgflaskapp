@@ -1,0 +1,11 @@
+<form method="POST" action="" >
+    <label for="idddsymbols">Select a symbol :</label>
+
+    <select name="ddSymbols" id="idddsymbols">
+      {% for symdata in symdataDetails %}
+      <option value={{symdata[0]}}>{{symdata[0]}}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Submit"/> <!-- POST REQUEST -->
+</form>
