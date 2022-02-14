@@ -1,0 +1,4 @@
+mysql_host: 'localhost'
+mysql_user: 'vguser'
+mysql_password: 'vgpwd'
+mysql_db: 'vgdb'
