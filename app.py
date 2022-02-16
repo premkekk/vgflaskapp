@@ -27,7 +27,7 @@ def index():
     if request.method == 'POST':
         symReq = request.form
         psymbol = symReq['symbol']
-        return redirect('/symbolsinfo?sym=' + psymbol)
+        return redirect('/symbolhist?sym=' + psymbol)
     return render_template('textbox.html')
 
 
@@ -79,16 +79,12 @@ def linechart():
                               " WHERE symbol = '" + psym + "' and histdate > '2022-01-01'")
     if resultValue > 0:
         symdataDetails = cur.fetchall()
-        lstSymData = list(symdataDetails)
-        labels = [row[0] for row in lstSymData]
-        values = [row[1] for row in lstSymData]
         lstDt = pd.DataFrame(list(symdataDetails))[1].to_list()
         lstOP = pd.DataFrame(list(symdataDetails))[2].to_list()
         lstCP = pd.DataFrame(list(symdataDetails))[3].to_list()
         lstHP = pd.DataFrame(list(symdataDetails))[4].to_list()
         lstLP = pd.DataFrame(list(symdataDetails))[5].to_list()
-        lstVol = pd.DataFrame(list(symdataDetails))[6].to_list()
-        return render_template('linechart.html', symbol=psym, labels=lstDt, openprice=lstOP, closeprice=lstCP, highprice=lstHP, lowprice=lstLP, volume=lstVol)
+        return render_template('linechart.html', symbol=psym, labels=lstDt, openprice=lstOP, closeprice=lstCP, highprice=lstHP, lowprice=lstLP)
 
 
 if __name__ == '__main__':

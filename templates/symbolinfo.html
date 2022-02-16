@@ -2,11 +2,12 @@
 <!-- output details in tabular format -->
 <table border =1>
     <th>
+    <tr>
         <td>SYMBOL</td>
-        <td>SECTOR</td>
-        <td>VOLUME</td>
-        <td>MARKETCAP</td>
-        <td>QUOTETYPE</td>
+        <td>CATEGORY(SECTOR)</td>
+        <td>COMPANY NAME</td>
+        <td>PRIMARY EXCHANGE</td>
+    </tr>
     </th>
     {% for symdata in symdataDetails %}
     <tr>
@@ -14,7 +15,6 @@
         <td> {{symdata[1]}}</td>
         <td> {{symdata[2]}}</td>
         <td> {{symdata[3]}}</td>
-        <td> {{symdata[4]}}</td>
     </tr>
     {% endfor %}
 </table>
