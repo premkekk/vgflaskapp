@@ -1,4 +1,4 @@
-# Vanguard YFinance GUI
+# VG YFinance GUI
 
 <table border=1 cellpadding=10>
 <tr>
