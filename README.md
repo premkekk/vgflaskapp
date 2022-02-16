@@ -38,5 +38,13 @@ Flask, jinja2
     # db.yaml --- stores mysql configuration
 
     # app.py --- main program for this application
+
 ```
 
+```python
+    # to run application
+    # Please make sure to run main program vg application. This will create tables, loads stats
+    # Run this project - app.py
+    # Go to URL http://127.0.0.1:5000/ and please follow documentation steps for further details.
+
+```
